@@ -1,9 +1,9 @@
 interface Bird {
-    name: string;
-    canEat: boolean;
-    canDrink: boolean;
-    canSleep: boolean;
-    canFly: boolean;
+    name : string;
+    canEat : boolean;
+    canDrink : boolean;
+    canSleep : boolean;
+    canFly : boolean;
 };
 
 class Husky {
@@ -26,28 +26,40 @@ class Chucho {
 };
 
 interface Dog extends Bird{
-    race: Husky | Labrator | Chucho;
-    age: string;
-}
+    race : Husky | Labrator | Chucho;
+    age : string;
+};
 
 const animal : Bird = {
-    name: 'Polly',
-    canEat: true,
-    canDrink: true,
-    canSleep: true,
-    canFly: false
-}
+    name : 'Polly',
+    canEat : true,
+    canDrink : true,
+    canSleep : true,
+    canFly : false
+};
 
 console.log(animal);
 
-const doggiAnimal : Dog = {
-    name: 'Polly',
+const huskyDog : Dog = {
+    name: 'Husky Dog',
     canEat: true,
     canDrink: true,
     canSleep: true,
     canFly: false,
     race: Husky,
     age: '1 year'
+};
+
+console.log(huskyDog);
+
+type cat = {
+    name : string;
+    color : string;
+    canSleep : boolean;
 }
 
-console.log(doggiAnimal);
+type snake = {
+    canEat : boolean;
+    canDrink : boolean;
+    canSleep : boolean;
+}
