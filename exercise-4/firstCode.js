@@ -1,11 +1,11 @@
-const User = {
+const user = {
     firstName: "Pedro",
     lastName: "Sánchez",
     age: 45,
     profession: "Barro man",
 }
 
-const result = userName(User);
+const result = userName(user);
 console.log(result);
   
 function userName(user) {
