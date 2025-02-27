@@ -17,7 +17,6 @@ for (const [key, values] of myMap.entries()){
 
 for (const key of myMap.keys()){
     const KEY_MOROSO = "moroso";
-    
     if(myMap.has(KEY_MOROSO)){
         console.log(key);
         break;
