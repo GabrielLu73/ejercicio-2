@@ -6,30 +6,6 @@ interface Bird {
     canFly : boolean;
 };
 
-class Husky {
-    name : string; 
-    constructor(){
-        this.name = "Husky";
-    }
-};
-class Labrator {
-    name : string;
-    constructor(){
-        this.name = "Labrator";
-    }
-};
-class Chucho {
-    name : string;
-    constructor(){
-        this.name = "Chucho";
-    }
-};
-
-interface Dog extends Bird{
-    race : Husky | Labrator | Chucho;
-    age : string;
-};
-
 const animal : Bird = {
     name : 'Polly',
     canEat : true,
@@ -38,7 +14,12 @@ const animal : Bird = {
     canFly : false
 };
 
-console.log(animal);
+type DogRace = 'Husky' | 'Labrador' | 'Chucho'; 
+
+interface Dog extends Bird{
+    race : DogRace;
+    age : number;
+};
 
 const huskyDog : Dog = {
     name: 'Husky Dog',
@@ -46,20 +27,25 @@ const huskyDog : Dog = {
     canDrink: true,
     canSleep: true,
     canFly: false,
-    race: Husky,
-    age: '1 year'
+    race: "Chucho",
+    age: 5
 };
 
+type Cat = Pick<Bird, "name" |  "canSleep"> & { color : string }
+
+type Snake = Pick <Bird, "canDrink" | "canEat" | "canSleep">
+
+const cat : Cat  = {
+    name : "gato",
+    canSleep : true,
+    color : "blanco y negro"
+}
+
+const snake : Snake = {
+    canDrink : true,
+    canEat : true,
+    canSleep : true
+}
+
+console.log(animal);
 console.log(huskyDog);
-
-type cat = {
-    name : string;
-    color : string;
-    canSleep : boolean;
-}
-
-type snake = {
-    canEat : boolean;
-    canDrink : boolean;
-    canSleep : boolean;
-}
