@@ -1,3 +1,4 @@
+//Excercise 1
 interface Bird {
     name : string;
     canEat : boolean;
@@ -6,19 +7,25 @@ interface Bird {
     canFly : boolean;
 };
 
+//Exercise 2
+type DogRace = 'Husky' | 'Labrador' | 'Chucho'; 
+
+interface Dog extends Bird{
+    race : DogRace;
+    age : number;
+};
+
+//Exercise 3
+type Cat = Pick<Bird, "name" |  "canSleep"> & { color : string }
+type Snake = Pick <Bird, "canDrink" | "canEat" | "canSleep">
+
+//usage examples
 const animal : Bird = {
     name : 'Polly',
     canEat : true,
     canDrink : true,
     canSleep : true,
     canFly : false
-};
-
-type DogRace = 'Husky' | 'Labrador' | 'Chucho'; 
-
-interface Dog extends Bird{
-    race : DogRace;
-    age : number;
 };
 
 const huskyDog : Dog = {
@@ -30,10 +37,6 @@ const huskyDog : Dog = {
     race: "Chucho",
     age: 5
 };
-
-type Cat = Pick<Bird, "name" |  "canSleep"> & { color : string }
-
-type Snake = Pick <Bird, "canDrink" | "canEat" | "canSleep">
 
 const cat : Cat  = {
     name : "gato",
