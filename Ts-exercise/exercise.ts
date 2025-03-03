@@ -49,3 +49,5 @@ const snake : Snake = {
 
 console.log(animal);
 console.log(huskyDog);
+console.log(cat);
+console.log(snake);
